@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <li><a href="#">Adele</a></li>
+  <li><a href="#">Agnes</a></li>
+
+  <li><a href="#">Billy</a></li>
+  <li><a href="#">Bob</a></li>
+
+  <li><a href="#">Calvin</a></li>
+  <li><a href="#">Christina</a></li>
+  <li><a href="#">Cindy</a></li>
+</ul>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+    
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    </script>
+    <div class="container">
+        <div class="front side">
+            <div class="content">
+                <h1>Hakkam Abdullah</h1>
+                <p>I am a graphic designer and art director. I am as well specialised in front end web design, user experience and creating identities. Throughout my career, I have worked with companies of all shapes and sizes that enriched my experience
+                </p>
+            </div>
+        </div>
+        <div class="back side">
+            <div class="content">
+                <h1>Contact Me</h1>
+                <form>
+                    <label>Your Name :</label>
+                    <input type="text" placeholder="Omar Khattab">
+                    <label>Your E-mail :</label>
+                    <input type="text" placeholder="Example@mail.com">
+                    <label>Your message :</label>
+                    <textarea placeholder="The Subject"></textarea>
+                    <input type="submit" value="Done">
+                </form>
+            </div>
+        </div>
+    
+    </div>
+    <a target="_blank" href="http://codepen.io/Moslim/" class="white-mode">OTHER PENS</a>
+</body>
+</html>
